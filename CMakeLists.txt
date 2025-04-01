@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(raytracing LANGUAGES CXX CUDA)
+project(_raytracing LANGUAGES CXX CUDA)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
@@ -25,3 +25,5 @@ target_link_libraries(${PROJECT_NAME} PRIVATE ${TORCH_LIBRARIES} Eigen3::Eigen
                                               Python::Python)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
+
+install(TARGETS ${PROJECT_NAME} DESTINATION raytracing)
