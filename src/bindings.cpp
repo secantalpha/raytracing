@@ -2,8 +2,7 @@
 #include <pybind11/numpy.h>
 #include <pybind11/eigen.h>
 
-#include <torch/extension.h>
-
+#include <ATen/ATen.h>
 #include <raytracing/raytracer.h>
 
 

@@ -4,10 +4,12 @@ A CUDA Mesh RayTracer with BVH acceleration.
 
 ### Install
 
+Install [`uv`](https://docs.astral.sh/uv/)
+
 ```python
 git clone https://github.com/ashawkey/raytracing
 cd raytracing
-pip install .
+uv build
 ```
 
 ### Usage
