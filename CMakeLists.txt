@@ -11,9 +11,8 @@ find_package(Eigen3 REQUIRED)
 find_package(Torch REQUIRED CONFIG)
 find_package(Python COMPONENTS Interpreter Development)
 
-add_library(
-  ${PROJECT_NAME} SHARED
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/raytracer.cu
+python_add_library(
+  ${PROJECT_NAME} MODULE ${CMAKE_CURRENT_SOURCE_DIR}/src/raytracer.cu
   ${CMAKE_CURRENT_SOURCE_DIR}/src/bvh.cu
   ${CMAKE_CURRENT_SOURCE_DIR}/src/bindings.cpp)
 
@@ -23,6 +22,9 @@ target_include_directories(
 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${TORCH_LIBRARIES} Eigen3::Eigen
                                               Python::Python)
+
+target_compile_definitions(${PROJECT_NAME}
+                           PRIVATE -DTORCH_EXTENSION_NAME=${PROJECT_NAME})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 
