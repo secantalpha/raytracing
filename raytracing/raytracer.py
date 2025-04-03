@@ -2,7 +2,7 @@ import numpy as np
 import torch
 
 # CUDA extension
-import _raytracing as _backend
+import raytracing._raytracing as _backend
 
 
 class RayTracer:
