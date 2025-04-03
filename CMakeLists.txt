@@ -29,3 +29,4 @@ target_compile_definitions(${PROJECT_NAME}
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 
 install(TARGETS ${PROJECT_NAME} DESTINATION raytracing)
+install(DIRECTORY raytracing/ DESTINATION raytracing)
